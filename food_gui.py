@@ -16,6 +16,7 @@ class WeekdayFood:
             "Burger 256",
             "CREATE",
             "Lions Corner",
+            "Cafe Dallucci",
         ]
         self.rand_index = random.randint(0, len(self.choice) - 1)
 
