@@ -1,8 +1,9 @@
 import random
 import sys
 from datetime import datetime
-from PyQt5.QtWidgets import QApplication, QLabel, QMainWindow, QPushButton
+
 from PyQt5.QtGui import QIcon
+from PyQt5.QtWidgets import QApplication, QLabel, QMainWindow, QPushButton
 
 
 class WeekdayFood:
@@ -67,13 +68,18 @@ class MyWindow(QMainWindow):
         if current_month >= 5 and current_month <= 7:
             home_food = HomeFood()
             self.label.setText(str(home_food))
-        # checks if it's a weekday and if the month is between august and april
+
         elif (
             datetime.today().weekday() < 5 and current_month >= 8 and current_month <= 4
         ):
             weekday_food = WeekdayFood()
             self.label.setText(str(weekday_food))
-        # it's a weekend and if the month is between august and april
+
+        elif datetime.today().weekday() == 6 and current_month >= 8 and current_month <= 4:
+            weekend_food = WeekendFood()
+            weekend_food.choice.remove("Chick-fil-A")
+            self.label.setText(str(weekend_food))
+
         else:
             weekend_food = WeekendFood()
             self.label.setText(str(weekend_food))
