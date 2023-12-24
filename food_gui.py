@@ -1,9 +1,7 @@
 import random
-import sys
 from datetime import datetime
 
-from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QApplication, QLabel, QMainWindow, QPushButton
+from PyQt5.QtWidgets import QLabel, QMainWindow, QPushButton
 
 
 class WeekdayFood:
@@ -56,7 +54,7 @@ class MyWindow(QMainWindow):
         self.label = QLabel(self)
         self.label.move(100, 20)
         self.label.setGeometry(150, 20, 200, 50)
-        self.label.setText("FOOD PICKER")
+        self.label.setText("FOOD SELECTOR")
 
         self.button = QPushButton(self)
         self.button.move(150, 80)
@@ -84,11 +82,3 @@ class MyWindow(QMainWindow):
         else:
             weekend_food = WeekendFood()
             self.label.setText(str(weekend_food))
-
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    window = MyWindow()
-    window.setWindowIcon(QIcon("meal-food-icon.png"))
-    window.show()
-    sys.exit(app.exec_())
