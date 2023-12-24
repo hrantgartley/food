@@ -1,4 +1,4 @@
-import sys
+from sys import argv, exit
 
 from food_gui import MyWindow
 from PyQt5.QtGui import QIcon
@@ -6,11 +6,11 @@ from PyQt5.QtWidgets import QApplication
 
 
 def main():
-    app = QApplication(sys.argv)
+    app = QApplication(argv)
     window = MyWindow()
-    window.setWindowIcon(QIcon("meal-food-icon.png"))
+    window.setWindowIcon(QIcon("food-meal-icon.png"))
     window.show()
-    sys.exit(app.exec_())
+    exit(app.exec_())
 
 
 if __name__ == "__main__":
