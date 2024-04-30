@@ -64,17 +64,17 @@ class MyWindow(QMainWindow):
     def display_food(self):
         current_month = datetime.today().month
 
-        if current_month >= 5 and current_month <= 7:
+        if 5 <= current_month <= 7:
             home_food = HomeFood()
             self.label.setText(str(home_food))
 
         elif (
-            datetime.today().weekday() < 5 and current_month >= 8 and current_month <= 4
+                datetime.today().weekday() < 5 and 8 <= current_month <= 4
         ):
             weekday_food = WeekdayFood()
             self.label.setText(str(weekday_food))
 
-        elif datetime.today().weekday() == 6 and current_month >= 8 and current_month <= 4:
+        elif datetime.today().weekday() == 6 and 8 <= current_month <= 4:
             weekend_food = WeekendFood()
             weekend_food.choice.remove("Chick-fil-A")
             self.label.setText(str(weekend_food))
