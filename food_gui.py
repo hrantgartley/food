@@ -28,6 +28,7 @@ class WeekdayFood:
 
 class WeekendFood(WeekdayFood):
     def __init__(self):
+        super().__init__()
         self.choice = ["Chick-fil-A", "Cafeteria", "CREATE", "Starbucks"]
         self.rand_index = random.randint(0, len(self.choice) - 1)
 
@@ -37,6 +38,7 @@ class WeekendFood(WeekdayFood):
 
 class HomeFood(WeekdayFood):
     def __init__(self):
+        super().__init__()
         with open("food.txt", "r") as f:
             self.choice = [line.splitlines() for line in f.readlines()]
         self.rand_index = random.randint(0, len(self.choice) - 1)
